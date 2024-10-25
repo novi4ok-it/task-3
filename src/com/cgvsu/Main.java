@@ -32,7 +32,7 @@ public class Main {
         model1.normals = new ArrayList<>(Arrays.asList(
                 new Vector3f(-1.0f, -2.0f, -3.0f),
                 new Vector3f(-4.0f, -5.0f, -6.0f),
-                new Vector3f(-7.0f, -8.0f, -9.0f)
+                new Vector3f(-7.0f, -8.0f, -6.0f)
         ));
         model1.polygons = new ArrayList<>(Arrays.asList(
                 new Polygon() {{
@@ -43,7 +43,8 @@ public class Main {
         ));
 
         String filename = "test1.obj";
-        ObjWriter.write(model1, filename);
+        com.cgvsu.ObjWriter objWriter = new ObjWriter();
+        objWriter.write(model1, filename);
         File file = new File(filename);
 
         Path fileName = Path.of("X:\\tasks\\2 kurs\\Task3\\ObjReaderInitial\\test1.obj");
@@ -52,9 +53,9 @@ public class Main {
         System.out.println("Loading model ...");
         Model model = ObjReader.read(fileContent);
 
-        System.out.println("Vertices: " + model.vertices.size());
-        System.out.println("Texture vertices: " + model.textureVertices.size());
-        System.out.println("Normals: " + model.normals.size());
-        System.out.println("Polygons: " + model.polygons.size());
+        System.out.println("Vertices: " + model.getVertices().size());
+        System.out.println("Texture vertices: " + model.getTextureVertices().size());
+        System.out.println("Normals: " + model.getNormals().size());
+        System.out.println("Polygons: " + model.getPolygons().size());
     }
 }

@@ -46,7 +46,8 @@ class ObjWriterTest {
         ));
 
         String filename = "test.obj";
-        ObjWriter.write(model, filename);
+        com.cgvsu.ObjWriter objWriter = new ObjWriter();
+        objWriter.write(model, filename);
 
         List<String> fileLines = Files.readAllLines(Paths.get(filename));
 

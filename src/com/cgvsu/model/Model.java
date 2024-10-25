@@ -4,10 +4,30 @@ import com.cgvsu.math.Vector3f;
 
 import java.util.*;
 
-public class Model {
+public class Model implements com.cgvsu.Model {
+    public List<Vector3f> vertices = new ArrayList<>();
+    public List<Vector2f> textureVertices = new ArrayList<>();
+    public List<Vector3f> normals = new ArrayList<>();
+    public List<Polygon> polygons = new ArrayList<>();
 
-    public ArrayList<Vector3f> vertices = new ArrayList<Vector3f>();
-    public ArrayList<Vector2f> textureVertices = new ArrayList<Vector2f>();
-    public ArrayList<Vector3f> normals = new ArrayList<Vector3f>();
-    public ArrayList<Polygon> polygons = new ArrayList<Polygon>();
+    // Геттеры
+    @Override
+    public List<Vector3f> getVertices() {
+        return vertices;
+    }
+
+    @Override
+    public List<Vector2f> getTextureVertices() {
+        return textureVertices;
+    }
+
+    @Override
+    public List<Vector3f> getNormals() {
+        return normals;
+    }
+
+    @Override
+    public List<Polygon> getPolygons() {
+        return polygons;
+    }
 }

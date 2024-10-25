@@ -10,9 +10,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public class ObjWriter {
+public class ObjWriter implements com.cgvsu.ObjWriter {
 
-    public static void write(Model model, String filename) throws IOException {
+    public void write(Model model, String filename) throws IOException {
         File file = new File(filename);
         FileWriter writer = new FileWriter(file);
 
